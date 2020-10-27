@@ -784,23 +784,7 @@ def extractWavFmtChunk(wav_fmt_chunk):
 
     Returns
     -------
-
-    format : int
-        Audio File Data Format.
-        See the class WAVE_FORMAT.
-    numch : int
-        Number of Channels of Audio
-    fs : int
-        Sampling Frequency of Audio
-    byterate : int
-        Byte Rate of Audio
-        Byte Rate = Sample Rate * Num of Channel * Bits per Sample / 8
-    blockalign : int
-        Block Align of Audio 
-        Block Align = Num of Channel * Bits per Sample / 8
-    bitdepth : int
-        Bits per Sample
-        uint8, int16, int32, 32bit float, etc.
+    struct_fmt_chunk: struct CWavHeader
     
     """
     
@@ -968,7 +952,6 @@ def readf32(filename, mmap=False):
     -------
     fmt_chunk: wave file header subchunk1 data
     data: Audio Data Array float32 (-1.0 ~ 1.0 ), Mono, 44100Hz
-    length: 
     struct_fmt: extract header information structure
     time: time of audio
 
